@@ -36,7 +36,39 @@
     .open .btn{
         color: var(--white)
     }
+
+/*ボタン内のバー*/
+.btn{
+    display: grid;
+    place-items: center;
 }
+.btn::before,
+.btn::after,
+.btn .bar{
+    grid-area: 1/1;
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background-color: currentColor;
+    transition: transform 0.4s;
+}
+.close .btn::before {
+    transform: translateY(-8px);
+}
+.close .btn::after {
+    transform: translateY(8px);
+}
+.open .btn::before {
+    transform: rotate(45deg)
+}
+.open .btn::after {
+    transform: rotate(-45deg)
+}
+.open .btn .bar{
+    transform: scale(0)
+}
+
 /*メニュー(オーバーレイ）*/
 .list{
     position: fixed;
@@ -56,7 +88,7 @@
     place-content:center;
     text-align: center;
 }
-
+}
 @media (hover: hover){
     .list :hover{
         color: var(--accent)
