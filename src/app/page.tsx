@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import Slider from '@/components/slider'
-
+import Hero from '../components/hero'
 
 const items = [
   { id: 1, content: 'Slide 1', imageUrl: 'img1.jpg'},
@@ -12,8 +12,8 @@ const items = [
 
 export default function Home() {
   return (
-    <div className='styles.flexContainer'>
-      <h1>bandName</h1>
+    <div>
+      <Hero title="バンド名"/>
       <Slider  items={items}/>
     </div>
   )

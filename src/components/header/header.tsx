@@ -3,10 +3,11 @@ import Nav from './nav';
 import Logo from './logo';
 import styles from "./header.module.css"
 import { Container } from '../container';
+
 const Header = () => {
   return (
     <header>
-      <Container>
+      <Container large>
       <div className={styles.flexContainer}>
       
       <Logo />
