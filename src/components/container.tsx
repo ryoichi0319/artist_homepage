@@ -2,11 +2,12 @@ import styles from "../styles/container.module.css"
 
 interface ContainerProps {
     children: React.ReactNode;
+    large: boolean;
   }
 
-export function Container({ children }: ContainerProps){
+export function Container({ children, large = false  }: ContainerProps){
     return (
-        <div className={styles.default}>
+        <div className={large ? styles.large : styles.default}>
             {children}
         </div>
     )

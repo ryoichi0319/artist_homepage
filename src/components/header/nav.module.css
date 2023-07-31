@@ -1,6 +1,60 @@
-.list {
-    display: flex;
-    gap: 2em;
+@media (min-width: 768px){
+    .btn{
+        display:none;
+    }
+    .list{
+        display: flex;
+        gap:2em;
+    }
+}
+
+@media( max-width: 767px){
+    /*ボタン*/
+    .close .btn{
+        color: blue;
+    }
+    .open .btn {
+        color: red
+    }
+}
+/*モバイル*/
+@media(max-width: 767px){
+    /*ボタン*/
+    .btn{
+        all:unset;
+        outline: revert;
+        -webkit-tap-highlight-color: transparent;
+        cursor: pointer;
+        width: 42px;
+        height: 42px;
+        position: relative;
+        z-index: 200;
+    }
+    .close .btn{
+        color: var(--gray-75);
+    }
+    .open .btn{
+        color: var(--white)
+    }
+}
+/*メニュー(オーバーレイ）*/
+.list{
+    position: fixed;
+    inset: 0 -100% 0 100%;
+    z-index: 100;
+    background: rgba(0,0,0,0.8);
+    color: var(--white);
+    transition: transform 0.4s;
+}
+.open .list{
+    transform: translateX(-100%);
+}
+/*メニューオーバーレイ内の配置*/
+.list{
+    display:grid;
+    gap:40px;
+    place-content:center;
+    text-align: center;
 }
 
 @media (hover: hover){
