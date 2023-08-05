@@ -4,7 +4,7 @@ const Logo: React.FC = () => {
   return (
     <div>
       <Link href="/">
-        BANDLogo
+        Acth8
       </Link>
     </div>
   );

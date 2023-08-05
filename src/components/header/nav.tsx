@@ -15,10 +15,12 @@ export default function Nav(){
         <nav className={navIsOpen ? styles.open : styles.close}>
             <style jsx global>{`
                 @media (max-width: 767px){
+                  body{
                     overflow: hidden;
                     position: fixed;
                     width: 100%;
                 }
+              }
             `}</style>
             <button className={styles.btn} onClick={toggleNav}>
               <span className={styles.bar}></span>
@@ -39,6 +41,11 @@ export default function Nav(){
             <li>
                 <Link href="/discography" onClick={closeNav}>
                     Discography
+                </Link>
+            </li>
+            <li>
+                <Link href="/contact" onClick={closeNav}>
+                    Contact
                 </Link>
             </li>
            </ul>

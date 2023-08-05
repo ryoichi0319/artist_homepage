@@ -1,0 +1,108 @@
+.centerColumn{
+    composes: centerColumn from "../../styles/utils.module.css";
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pageTitle{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-weight: 900;
+}
+
+.contentsBox{
+    
+}
+        
+.contact-table{
+    
+}
+      
+.contact_data{
+       align-items: center;
+       font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(46, 44, 44)
+}
+.contact_data::after{
+  content: "*必須";
+  font-size: 3px;
+  margin-left: 3px;
+  color: red;
+}
+
+.contact_text{
+  width: 50%;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 20px 0 20px 0;
+  border:1px solid rgb(70, 67, 67);
+  
+}
+
+.contact_text_area{
+  width: 80%;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 20px 0 20px 30px;
+  border:1px solid rgb(70, 67, 67);
+
+
+}
+       
+.form-input{
+    
+}
+          
+.contact-data{
+    
+}
+       
+.contact-text{
+    
+}
+       
+.form-input{
+    
+}
+          
+.contact-data{
+    
+}
+       
+.contact-text{
+    
+}
+       
+.form-input{
+    
+}
+          
+.contact-data{
+    
+}
+       
+.contact-text{
+    
+}
+       
+.form-input-text{
+    
+}
+     
+.btns{
+    
+}
+               
+.contact_send{
+    margin-bottom: 15px;
+}
+       
+.contact_cancel{
+    
+}
+

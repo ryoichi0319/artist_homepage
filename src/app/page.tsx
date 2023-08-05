@@ -13,7 +13,7 @@ const items = [
 export default function Home() {
   return (
     <div>
-      <Hero title="バンド名"/>
+      <Hero title="Act8"/>
       <Slider  items={items}/>
     </div>
   )

@@ -12,10 +12,10 @@ export default function MotionWrapper({
   return (
     // アンマウント時の動きをつけるために必要な記述
     <AnimatePresence mode="wait">
-
+{/* 
 　　　　　　　　　　　　//　動きをつけるために必要な記述
 　　　　　　　　　　　　//　具体的な動きを記述
-　　　　　　　　　　　　//　今回はopacityを使用して　ふわっ　を実現
+　　　　　　　　　　　　//　今回はopacityを使用して　ふわっ　を実現 */}
       <motion.div
         key={pathName}
         initial={{ opacity: 0 }} //　初期状態

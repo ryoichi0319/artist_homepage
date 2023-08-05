@@ -29,3 +29,10 @@
         text-align: left;
     }
 }
+/*横並び中央column*/
+.centerColumn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
