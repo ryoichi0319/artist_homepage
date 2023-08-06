@@ -32,7 +32,7 @@ const Slider: React.FC<SliderProps> = ({ items }) => {
       
       {items.map((item) => (
         <SwiperSlide key={item.id}>
-          <img src={item.imageUrl} alt={item.content} /> {/* 画像を表示 */}
+          <img src={item.imageUrl} alt={item.content} width="100%" height={500}/> {/* 画像を表示 */}
         </SwiperSlide>
       ))}
     </Swiper>

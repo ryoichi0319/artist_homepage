@@ -56,7 +56,7 @@ const Contact: React.FC<ContactProps> = () => {
       <h2 className={styles.pageTitle}>お問い合わせ</h2>
       <div>
         <p>お問い合わせは、以下のフォームから受け付けております。<br/>
-        必須項目が埋まると送信ボタンが点灯します。</p>
+        必須項目が入力されると送信ボタンが点灯します。</p>
         <form className={styles.contentsBox}>
           <table className="contact-table">
             <tbody>
