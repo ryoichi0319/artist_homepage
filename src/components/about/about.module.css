@@ -1,0 +1,23 @@
+.sideByCenter{
+    composes: sideBySideCenter from "../../styles/utils.module.css";
+    margin: 100px 0 100px 0;
+}
+.about_title{
+    margin-left:3%;
+    margin-right: 3%;
+}
+.about_h3{
+    margin-bottom: 40px;
+    text-align: center;
+}
+.about_images2{
+    margin-left: 5%;
+
+}
+.about_title2{
+    margin-left: 5%;
+
+}
+.about_h32{
+
+}
