@@ -4,7 +4,7 @@ const Logo: React.FC = () => {
   return (
     <div>
       <Link href="/">
-        Acth8
+        Acht8
       </Link>
     </div>
   );

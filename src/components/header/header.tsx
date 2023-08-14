@@ -6,7 +6,7 @@ import { Container } from '../container';
 
 const Header = () => {
   return (
-    <header>
+    <header className={styles.header}>
       <Container large>
       <div className={styles.flexContainer}>
       

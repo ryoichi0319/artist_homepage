@@ -1,23 +1,34 @@
-.sideByCenter{
-    composes: sideBySideCenter from "../../styles/utils.module.css";
-    margin: 100px 0 100px 0;
+.title{
+    margin-top:20px;
+    margin-left: 20px;
 }
+.side_right{
+    display: flex;
+    width: 100%;
+
+}
+
 .about_title{
+    margin-top: 50px;
     margin-left:3%;
     margin-right: 3%;
+    flex-basis: 50%;
+    
 }
-.about_h3{
-    margin-bottom: 40px;
-    text-align: center;
-}
-.about_images2{
-    margin-left: 5%;
 
+.about_images{
+    margin-right: 50px;
+    flex-basis: 40%;
 }
+
+
+
+/* @media screen and (max-width: 768px) {
+    .about_images{
+        width:200px;
+    }
+  } */
 .about_title2{
     margin-left: 5%;
-
-}
-.about_h32{
 
 }

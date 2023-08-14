@@ -1,10 +1,13 @@
 "use client"
 
-import { Tab, Tabs, TabList, TabPanel} from 'react-tabs'
+import { Tab,Tabs, TabList, TabPanel} from 'react-tabs'
 import 'react-tabs/style/react-tabs.css';
 import { db } from '@/firebase';
 import { useEffect, useState } from 'react';
 import dayjs from 'dayjs';
+import styles from "./news.module.css"
+import { Button } from '@mui/material';
+
 interface Message {
     id: string;
     text: string;
@@ -13,11 +16,22 @@ interface Message {
 
 const News = () => {
   const [messages, setMessages] = useState<Message[]>([]);
+  const [loadIndex, setLoadIndex] = useState(1);
+  const [isEmpty, setIsEmpty] = useState(false);
+  const [currentPost, setCurrentPost] = useState([]);
+
+  const displayMore = () => {
+    if (loadIndex > messages.length) {
+      setIsEmpty(true);
+    } else {
+      setLoadIndex(loadIndex + 1);
+    }
+  };
 
 
 
   useEffect(()=>{
-    db.collection("messages").orderBy("createdAt").limit(50)
+    db.collection("messages").orderBy("createdAt","desc").limit(50)
     .onSnapshot((snapshot)=>{
       const data = snapshot.docs.map((doc,index)=>({
         
@@ -43,34 +57,31 @@ console.log(message)
     
   return ( 
     <div>
-       
-    <div className='News'>
+       <div className={styles.title}>
+        <h1>News</h1>
+       </div>
+    <div className={styles.news}>
       <Tabs>
-            <TabList className="news-tabList" >
-           
-                <Tab className="news-tab1"><p className='news-tab'>お知らせ</p></Tab>
-                <Tab className="news-tab1"><p className='news-tab'>お知らせ</p></Tab>
-                <Tab className="news-tab1"><p className='news-tab'>お知らせ</p></Tab>
+            <TabList className={styles.news_TabList} >
+                <Tab className={styles.news_Tab}><p>お知らせ</p></Tab>
+                <Tab className={styles.news_Tab}><p>お知らせ</p></Tab>
+                <Tab className={styles.news_Tab}><p>お知らせ</p></Tab>
             </TabList>
-            <TabPanel  className="my-tab-panel">
-                <div className='news-tabs'>
-                  
+            <TabPanel >  
                 {messages.map((post)=>(
-                      <div  key={post.id}   className='news-map' >
+                      <div  key={post.id} className={styles.TabPanel}>
                         
-                        <p className='news-flex-date1'>{post.createdAt}</p>
+                        <p className={styles.news_time}>{post.createdAt}</p>
                         
 
-                        <a className='news-flex-text1'  target="_blank" rel="noopener">{post.text}</a>
+                        <a className={styles.news_text1} target="_blank" rel="noopener">{post.text}aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</a>
                         </div>
                       
                   ))}
-                </div>
-       
             </TabPanel>
             <TabPanel>
             <div className='news-tabs'>
-            {message.map((post)=>(
+            {messages.map((post)=>(
                  
                       <div  key={post.id} className='news-map' >
                         
@@ -87,6 +98,26 @@ console.log(message)
               
             </TabPanel>
             <TabPanel>
+              {messages.slice(0,loadIndex).map((post:any)=>(
+                <div  key={post.id} className={styles.TabPanel}>
+                        
+                <p className={styles.news_time}>{post.createdAt}</p>
+                
+
+                <a className={styles.news_text1} target="_blank" rel="noopener">{post.text}</a>
+                
+                     </div>
+              ))}
+              <div className={styles.more_button}>
+               <Button
+              disabled={isEmpty ? true : false}
+              onClick={displayMore}
+              variant="contained"
+              className={styles.more_button}
+            >
+              more
+            </Button>
+            </div>
             </TabPanel>
 
             

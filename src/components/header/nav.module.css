@@ -31,7 +31,7 @@
         z-index: 200;
     }
     .close .btn{
-        color: var(--gray-75);
+        color: white;
     }
     .open .btn{
         color: var(--white)

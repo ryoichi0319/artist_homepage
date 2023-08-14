@@ -1,3 +1,10 @@
+.header{
+   padding-top: 30px;
+   padding-bottom: 30px;
+    background-color: rgb(55, 34, 18);
+}
+
 .flexContainer{
     composes: spaceBetween from "../../styles/utils.module.css";
+    
 }
