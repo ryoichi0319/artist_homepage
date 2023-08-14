@@ -24,7 +24,7 @@ const News = () => {
     if (loadIndex > messages.length) {
       setIsEmpty(true);
     } else {
-      setLoadIndex(loadIndex + 1);
+      setLoadIndex(loadIndex + 4);
     }
   };
 
