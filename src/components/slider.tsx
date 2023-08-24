@@ -1,10 +1,12 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay, EffectCube } from 'swiper/modules';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import 'swiper/css/effect-cube'
+import 'swiper/css/autoplay'
 import './slider.css'
 
 
@@ -22,17 +24,27 @@ type SliderProps = {
 const Slider: React.FC<SliderProps> = ({ items }) => {
   return (
     <Swiper
-    modules={[Navigation, Pagination, Scrollbar, A11y]}
-    pagination={{ clickable: true }}
-    spaceBetween={50}
-    slidesPerView={1}
-    navigation
-    scrollbar={{ draggable: true }}
-    >
+  modules={[Navigation, Pagination, Scrollbar,Autoplay,EffectCube]}
+  pagination={{ clickable: true }}
+  // autoplay={{ delay: 3000, disableOnInteraction: false }} // 必要に応じて値を調整
+  
+  slidesPerView={2}
+  navigation
+  scrollbar={{ draggable: true }}
+  effect={'cube'}
+  cubeEffect={{
+    shadow: true,
+    slideShadows: true,
+    shadowOffset: 20,
+    shadowScale: 0.94,
+  }}
+  grabCursor= {true}              //追加(カーソルを掴む動作に
+  speed= {1500}        
+>
       
       {items.map((item) => (
-        <SwiperSlide key={item.id}>
-          <img src={item.imageUrl} alt={item.content} width="100%" height={500}/> {/* 画像を表示 */}
+        <SwiperSlide key={item.id} className="slider">
+          <img src={item.imageUrl} alt={item.content} width="100%" height="300px"/> {/* 画像を表示 */}
         </SwiperSlide>
       ))}
     </Swiper>

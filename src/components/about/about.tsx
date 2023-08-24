@@ -2,6 +2,7 @@ import styles from "./about.module.css"
 import Image from "next/image"
 import bag1 from "../../images/bag1.jpg"
 import sample1 from "../../images/sample1.jpg"
+import misin from "../../images/misin.jpg"
 export default function About(){
     return (
         <>
@@ -27,8 +28,8 @@ export default function About(){
           <div className={styles.sideByCenter}>
           <div className={styles.about_images2}>
             <Image 
-              src={sample1}
-              alt="cd"
+              src={misin}
+              alt="ミシン"
              
               sizes="100vw"
               style={{

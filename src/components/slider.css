@@ -4,9 +4,16 @@
 .swiper-button-prev{
     color: white;
 }
-.swiper-scrollbar{
-   
-}
-.swiper-pagination{
-    
-}
+
+.swiper {
+    width: 500px;
+    height: 350px;
+  }
+  
+  
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+  }
+  

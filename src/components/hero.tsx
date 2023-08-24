@@ -9,7 +9,7 @@ export default function Hero({title}: HeroProps){
     return(
       <Container large={false}>
         <div className={styles.flexContainer}>
-          <h3 className={styles.title}>{title}</h3>
+          <h3>{title="slide"}</h3>
         </div>
       </Container>
     )
