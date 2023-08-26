@@ -31,7 +31,6 @@ const Slider: React.FC<SliderProps> = ({ items }) => {
   slidesPerView={2}
   navigation
   scrollbar={{ draggable: true }}
-  effect={'cube'}
   cubeEffect={{
     shadow: true,
     slideShadows: true,
@@ -39,15 +38,17 @@ const Slider: React.FC<SliderProps> = ({ items }) => {
     shadowScale: 0.94,
   }}
   grabCursor= {true}              //追加(カーソルを掴む動作に
-  speed= {1500}        
+  speed= {1500}  
+  className="swiper1"      
 >
       
       {items.map((item) => (
-        <SwiperSlide key={item.id} className="slider">
-          <img src={item.imageUrl} alt={item.content} width="100%" height="300px"/> {/* 画像を表示 */}
+        <SwiperSlide key={item.id} >
+          <img src={item.imageUrl} alt={item.content}  /> {/* 画像を表示 */}
         </SwiperSlide>
       ))}
     </Swiper>
+
   );
 };
 

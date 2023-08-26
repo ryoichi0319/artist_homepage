@@ -7,6 +7,7 @@ export default function About(){
     return (
         <>
           <div className={styles.side_right}>
+            
           <div className={styles.about_title}>
               <h3 className={styles.about_h3}>title</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo eligendi reiciendis quo voluptas minima eos sit soluta voluptates, cum ipsum ipsa rerum quam vitae id quis, architecto itaque magnam? Debitis.</p>
@@ -33,8 +34,8 @@ export default function About(){
              
               sizes="100vw"
               style={{
-               width: '50%',
-               height: 'auto',
+               width: '100%',
+               height: '400px',
   }}
             />
             </div>

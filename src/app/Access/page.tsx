@@ -6,7 +6,7 @@ const Live = () => {
   return (
     <MotionWrapper>
     
-    <Hero title="Live"/>
+    <Hero title="Access"/>
     
     </MotionWrapper>
   )

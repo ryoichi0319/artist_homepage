@@ -14,7 +14,7 @@ const items = [
 export default function Home() {
   return (
     <div>
-      <Hero title="Acht8"/>
+      <Hero title="Product"/>
       <Slider  items={items}/>
       <About />
       <News />

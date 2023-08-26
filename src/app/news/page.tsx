@@ -58,7 +58,7 @@ console.log(message)
   return ( 
     <div>
        <div className={styles.title}>
-        <h1>News</h1>
+        <h2 className={styles.news_title}>News</h2>
        </div>
     <div className={styles.news}>
       <Tabs>
