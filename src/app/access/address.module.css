@@ -1,0 +1,14 @@
+.map{
+    margin: 10% 50px 0 20px ;
+    display: flex;
+    
+}
+.address{
+    margin-top: 50px;
+    margin-left : 50px;
+    border: 1px solid #bac2ca;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
+
+}

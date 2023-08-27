@@ -1,3 +1,16 @@
+.image{
+    position: relative;
+}
+.message{
+    all:initial;
+    font-size: 30px;
+    position: absolute;
+    top:40%;
+    right: 30%;
+    color:rgb(232, 214, 214);
+    z-index:500;
+}
+    
 .title{
     font-size: 3em;
     font-weight: 900;

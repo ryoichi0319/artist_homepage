@@ -10,7 +10,7 @@ interface HeroProps{
 export default function Hero({title}: HeroProps){
     
     return(
-      <div>
+      <div className={styles.image}>
       <Image 
       src={sample10}
       alt=""
@@ -21,6 +21,7 @@ export default function Hero({title}: HeroProps){
        height: '660px',
 }}
     />
+    <p className={styles.message}>“ひと手間”に心血を注ぎます。</p>
       <Container large={false}>
         <div className={styles.flexContainer}>
        
