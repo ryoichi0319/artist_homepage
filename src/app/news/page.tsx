@@ -56,11 +56,11 @@ console.log(message)
            
     
   return ( 
-    <div>
+    <div className={styles.news_page}>
        <div className={styles.title}>
         <h2 className={styles.news_title}>News</h2>
        </div>
-    <div className={styles.news}>
+     <div className={styles.news}>
       <Tabs>
             <TabList className={styles.news_TabList} >
                 <Tab className={styles.news_Tab}><p>お知らせ</p></Tab>

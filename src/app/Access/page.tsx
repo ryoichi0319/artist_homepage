@@ -52,7 +52,7 @@ function MyComponent() {
           position={marking}
         />
          <InfoWindowF position={marking} options={infoWindowOptions} >
-          <p>aaaa</p>
+          <p className={styles.map_name}>Acht8</p>
           </InfoWindowF>
         {/* Child components, such as markers, info windows, etc. */}
         <></>

@@ -8,7 +8,7 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/effect-cube'
 import 'swiper/css/autoplay'
 import './slider.css'
-
+import styles from './slider1.module.css'
 
 
 type SlideItem = {
@@ -23,6 +23,7 @@ type SliderProps = {
 
 const Slider: React.FC<SliderProps> = ({ items }) => {
   return (
+    <div className={styles.swiper_page}>
     <Swiper
   modules={[Navigation, Pagination, Scrollbar,Autoplay,EffectCube]}
   pagination={{ clickable: true }}
@@ -48,7 +49,7 @@ const Slider: React.FC<SliderProps> = ({ items }) => {
         </SwiperSlide>
       ))}
     </Swiper>
-
+    </div>
   );
 };
 

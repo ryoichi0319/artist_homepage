@@ -3,6 +3,12 @@
     display: flex;
     
 }
+@media(max-width:768px){
+    .map{
+        display:block;
+    }
+}
+
 .address{
     margin-top: 50px;
     margin-left : 50px;
@@ -11,4 +17,8 @@
     border-radius: 10px;
     box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
 
+}
+.map_name{
+    font-weight: bold;
+    background-color: red;
 }

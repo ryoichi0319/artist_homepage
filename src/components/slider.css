@@ -9,9 +9,9 @@
 }
 
 .swiper {
-    margin-top: 50px;
     height: 350px;
-    width: 700px;
+    width: 100%;
+    margin:50px 1% 0 1%;
     
   }
   @media ( max-width: 768px){

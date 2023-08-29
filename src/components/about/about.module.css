@@ -25,6 +25,9 @@
     }
     
 }
+.about_h3{
+    margin-bottom: 15px;
+}
 
 
 .about_images{
@@ -48,6 +51,7 @@
   } */
 
 .sideByCenter{
+    margin-top: 20px;
     display:  flex;
 }
 @media(max-width:768px){
@@ -57,10 +61,16 @@
 }
 .about_title2{
     flex-basis:60%;
+    margin-top: 30px;
+    margin-left:3%;
+    margin-right: 3%;
 
 }
 .about_images2{
     flex-basis: 40%;
     margin-left:3%;
     margin-right: 3%;
+}
+.about_h32{
+    margin-bottom: 15px;
 }
