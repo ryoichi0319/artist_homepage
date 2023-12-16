@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, memo } from 'react';
+import React, { useState } from 'react';
 import {
   GoogleMap,
   Marker,
@@ -32,9 +32,9 @@ function Access() {
     pixelOffset: size,
   };
 
-  const createOffsetSize = () => {
-    return setSize(new window.google.maps.Size(0, -45));
-  };
+  // const createOffsetSize = () => {
+  //   return setSize(new window.google.maps.Size(0, -45));
+  // };
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
