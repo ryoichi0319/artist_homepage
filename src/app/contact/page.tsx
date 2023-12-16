@@ -4,7 +4,7 @@ import SendIcon from '@mui/icons-material/Send'
 import Button from '@mui/material/Button'
 import { useState, ChangeEvent, MouseEvent } from 'react'
 import sendMail from '../api/api.js'
-import styles from './contact.module.css'
+import styles from "../../styles/contact.module.css"
 
 interface ContactProps {}
 

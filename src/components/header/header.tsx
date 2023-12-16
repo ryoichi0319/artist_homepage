@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container } from '../container'
-import styles from './header.module.css'
+import styles from "../../styles/header.module.css"
 import Logo from './logo'
 import Nav from './nav'
 

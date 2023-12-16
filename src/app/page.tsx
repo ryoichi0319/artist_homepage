@@ -4,7 +4,6 @@ import MyComponent from './access/page'
 import News from './news/page'
 import About from '@/components/about/about'
 import Slider from '@/components/slider'
-import Schedule from './schedule/page'
 
 const items = [
   { id: 1, content: 'Slide 1', imageUrl: '/bag2.jpg' },

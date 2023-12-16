@@ -12,7 +12,7 @@ import {
 import { useEffect, useState } from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
-import styles from './news.module.css'
+import styles from "../../styles/news.module.css"
 import firebase_app from '@/firebase/config'
 import "./news.css"
 interface Message {

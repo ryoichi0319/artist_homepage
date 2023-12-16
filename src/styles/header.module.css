@@ -10,6 +10,6 @@
 }
 
 .flexContainer{
-    composes: spaceBetween from "../../styles/utils.module.css";
+    composes: spaceBetween from "./utils.module.css";
     
 }

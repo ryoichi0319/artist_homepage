@@ -14,7 +14,7 @@ import 'swiper/css/scrollbar'
 import 'swiper/css/effect-cube'
 import 'swiper/css/autoplay'
 import './slider.css'
-import styles from './slider1.module.css'
+import styles from "../styles/slider1.module.css"
 // eslint-disable-next-line import/order
 import Image from 'next/image' // next/image をインポート
 

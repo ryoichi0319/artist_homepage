@@ -1,8 +1,7 @@
 import Image from 'next/image'
-// eslint-disable-next-line import/no-unresolved
-import bag1 from '../../images/bag1.jpg'
-import misin from '../../images/misin.jpg'
-import styles from './about.module.css'
+import bag1217 from "../../../public/bag1217.jpg"
+import misin from "../../../public/misin.jpg"
+import styles from "@/styles/about.module.css"
 export default function About() {
   return (
     <>
@@ -18,7 +17,7 @@ export default function About() {
         </div>
         <div className={styles.about_images}>
           <Image
-            src={bag1}
+            src={bag1217}
             alt="バッグ"
             placeholder="blur"
             className={styles.about_image}

@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './address.module.css'
+import styles from "../../styles/address.module.css"
 const Google_address = () => {
   return (
     <div>
@@ -15,3 +15,4 @@ const Google_address = () => {
 }
 
 export default Google_address
+ 

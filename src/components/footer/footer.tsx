@@ -1,6 +1,6 @@
 import { Container } from '../container'
 import Logo from '../header/logo'
-import styles from './footer.module.css'
+import styles from "../../styles/footer.module.css"
 import Social from './social'
 
 export default function Footer() {

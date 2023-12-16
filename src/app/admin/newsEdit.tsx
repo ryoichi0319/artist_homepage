@@ -16,7 +16,7 @@ import {
 } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-import styles from "./newEdit.module.css"
+import styles from "../../styles/newEdit.module.css"
 import 'react-tabs/style/react-tabs.css'
 
 import firebase_app from '@/firebase/config'

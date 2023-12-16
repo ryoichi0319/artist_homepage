@@ -6,8 +6,8 @@ import {
   InfoWindow,
   useJsApiLoader,
 } from '@react-google-maps/api';
-import styles from './address.module.css';
 import Google_address from './google_address';
+import styles from "../../styles/address.module.css"
 
 function MyComponent() {
   const [size, setSize] = useState<undefined | google.maps.Size>(undefined);
