@@ -1,7 +1,6 @@
 .swiper_page{
-    margin:0 auto;
+    margin:20px auto 0;
     padding-top: 1px;
-    background-color: rgb(250, 236, 225);
     width: 800px;
     border-radius: 5px;
     box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
