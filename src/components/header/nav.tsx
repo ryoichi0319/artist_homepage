@@ -35,7 +35,7 @@ export default function Nav() {
         </li>
         <li>
           <Link href="/access" onClick={closeNav}>
-            Access
+            AccessMap
           </Link>
         </li>
         <li>
