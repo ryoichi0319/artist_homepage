@@ -40,7 +40,6 @@ export const AuthContextProvider :React.FC<AuthContextProviderProps> = ({childre
 
         return () => unsubscribe();
     }, []);
-    console.log(user,"user")
 
     return (
         <AuthContext.Provider value={{ user }}>

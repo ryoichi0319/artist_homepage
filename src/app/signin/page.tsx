@@ -19,7 +19,6 @@ function Page() {
         }
 
         // else successful
-        console.log(data?.user.email, "signInresult")
         return router.push("/admin")
     }
     return (<div className="wrapper" style={{marginTop: "100px", textAlign:"center"}}>

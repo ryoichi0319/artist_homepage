@@ -12,7 +12,7 @@ const Access = () => {
     const containerStyle = {
         width: '100%',
         height: '600px',
-        marginLeft: '30px', // ここにシングルクォートを追加
+        marginLeft: '30px', 
       };
 
   const center = {
