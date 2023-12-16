@@ -1,5 +1,4 @@
 "use client"
-import React, { useState } from 'react';
 import {
   GoogleMap,
   Marker,
@@ -7,8 +6,10 @@ import {
   useJsApiLoader,
 } from '@react-google-maps/api';
 import styles from "../../styles/address.module.css"
+ 
 
 const Access = () => {
+
     const containerStyle = {
         width: '100%',
         height: '600px',
@@ -58,3 +59,5 @@ const Access = () => {
 };
 
 export default Access;
+
+
