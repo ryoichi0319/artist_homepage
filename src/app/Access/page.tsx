@@ -6,7 +6,7 @@ import {
   InfoWindow,
   useJsApiLoader,
 } from '@react-google-maps/api';
-import styles from '../../styles/address.module.css';
+import styles from "../../styles/address.module.css"
 
 const Access = () => {
     const containerStyle = {
