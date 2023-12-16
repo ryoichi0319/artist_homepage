@@ -9,11 +9,11 @@ import {
 import styles from '../../styles/address.module.css';
 
 const Access = () => {
-  const containerStyle = {
-    width: '100%',
-    height: '600px',
-    marginLeft: '30px', // No need to use quotes here
-  };
+    const containerStyle = {
+        width: '100%',
+        height: '600px',
+        marginLeft: '30px', // ここにシングルクォートを追加
+      };
 
   const center = {
     lat: 34.61777632406608,
@@ -25,23 +25,14 @@ const Access = () => {
     lng: 135.53829496091254,
   };
 
- 
-  
-
-  // Uncomment if needed
-  // const createOffsetSize = () => {
-  //   return setSize(new window.google.maps.Size(0, -45));
-  // };
-
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY || '',
   });
 
-  const onLoad = (marker: google.maps.Marker) => {
-    console.log('Marker loaded at', marker.getPosition()?.toString());
+  const onLoad = () => {
+    console.log('Marker loaded at', marking.lat, marking.lng);
   };
-
   if (!isLoaded) {
     // Handle the case where Google Maps API is not loaded
     return <div>Error loading Google Maps API</div>;
