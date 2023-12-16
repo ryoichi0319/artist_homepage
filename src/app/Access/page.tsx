@@ -9,8 +9,8 @@ import {
 import styles from "../../styles/address.module.css"
  
 
-const Access =() => {
-  const [size, setSize] = useState<undefined | google.maps.Size>(undefined);
+const Access = () =>{
+const [size, setSize] = useState<undefined | google.maps.Size>(undefined);
   const containerStyle = {
     width: '100%',
     height: '600px',
@@ -44,8 +44,8 @@ const Access =() => {
     console.log('Marker loaded at', marker.getPosition()?.toString());
   };
 
-  if (isLoaded) {
     return (
+
       <div className={styles.map}>
         <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={16}>
           <Marker onLoad={onLoad} visible={true} position={marking} />
@@ -62,7 +62,7 @@ const Access =() => {
       </div>
       </div>
     );
-  } 
+  
 }
 
 export default Access;
