@@ -9,7 +9,6 @@ import {
 import styles from '../../styles/address.module.css';
 
 const Access = () => {
-  const [size, setSize] = useState<undefined | google.maps.Size>(undefined);
   const containerStyle = {
     width: '100%',
     height: '600px',
@@ -26,9 +25,8 @@ const Access = () => {
     lng: 135.53829496091254,
   };
 
-  const infoWindowOptions = {
-    pixelOffset: size,
-  };
+ 
+  
 
   // Uncomment if needed
   // const createOffsetSize = () => {
@@ -53,7 +51,7 @@ const Access = () => {
     <div className={styles.map}>
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={16}>
         <Marker onLoad={onLoad} visible={true} position={marking} />
-        <InfoWindow position={marking} options={infoWindowOptions}>
+        <InfoWindow position={marking} >
           <p className={styles.map_name}>Acht8</p>
         </InfoWindow>
       </GoogleMap>
