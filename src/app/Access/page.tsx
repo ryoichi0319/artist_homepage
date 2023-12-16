@@ -6,15 +6,14 @@ import {
   InfoWindow,
   useJsApiLoader,
 } from '@react-google-maps/api';
-import styles from "../../styles/address.module.css"
- 
+import styles from '../../styles/address.module.css';
 
-const Access = () =>{
-const [size, setSize] = useState<undefined | google.maps.Size>(undefined);
+const Access = () => {
+  const [size, setSize] = useState<undefined | google.maps.Size>(undefined);
   const containerStyle = {
     width: '100%',
     height: '600px',
-    'margin-left': '30px', // 引用符で囲む
+    marginLeft: '30px', // No need to use quotes here
   };
 
   const center = {
@@ -31,6 +30,7 @@ const [size, setSize] = useState<undefined | google.maps.Size>(undefined);
     pixelOffset: size,
   };
 
+  // Uncomment if needed
   // const createOffsetSize = () => {
   //   return setSize(new window.google.maps.Size(0, -45));
   // };
@@ -44,25 +44,28 @@ const [size, setSize] = useState<undefined | google.maps.Size>(undefined);
     console.log('Marker loaded at', marker.getPosition()?.toString());
   };
 
-    return (
+  if (!isLoaded) {
+    // Handle the case where Google Maps API is not loaded
+    return <div>Error loading Google Maps API</div>;
+  }
 
-      <div className={styles.map}>
-        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={16}>
-          <Marker onLoad={onLoad} visible={true} position={marking} />
-          <InfoWindow position={marking} options={infoWindowOptions}>
-            <p className={styles.map_name}>Acht8</p>
-          </InfoWindow>
-        </GoogleMap>
-        <div className={styles.address}>
+  return (
+    <div className={styles.map}>
+      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={16}>
+        <Marker onLoad={onLoad} visible={true} position={marking} />
+        <InfoWindow position={marking} options={infoWindowOptions}>
+          <p className={styles.map_name}>Acht8</p>
+        </InfoWindow>
+      </GoogleMap>
+      <div className={styles.address}>
         <h3 className="address-name">Acht8</h3>
         <p className="access-address">
           546-0012 <br /> 大阪市東住吉区中野3-12-3 ドミール春光1F
         </p>
         <p>TEL: 092-626-1777</p> <p>FAX: 092-626-1781</p>
       </div>
-      </div>
-    );
-  
-}
+    </div>
+  );
+};
 
 export default Access;
