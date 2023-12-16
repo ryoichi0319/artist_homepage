@@ -1,67 +1,62 @@
 "use client"
-import React from 'react'
-import { GoogleMap, LoadScript } from '@react-google-maps/api'
-import { MarkerF, InfoWindowF } from '@react-google-maps/api'
-import { useState } from 'react'
-import Address from './address'
-import styles from "./address.module.css"
-import './page.css'
-
-const containerStyle = {
-  width: '600px',
-  height: '600px',
-}
-
-const center = {
-  lat: 34.61777632406608,
-  lng: 135.53829496091254
-}
-
-const marking = {
- lat: 34.61777632406608, 
-  lng:135.53829496091254
-}
-const onLoad = (marker: google.maps.Marker) => {
-  console.log('marker loaded at', marker.getPosition()?.toString())
-}
-
-const googleMapURL = `https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY}&libraries=places`
+import React, { useState, memo } from 'react';
+import {
+  GoogleMap,
+  Marker,
+  InfoWindow,
+  useJsApiLoader,
+} from '@react-google-maps/api';
+import styles from './address.module.css';
+import Google_address from './google_address';
 
 function MyComponent() {
   const [size, setSize] = useState<undefined | google.maps.Size>(undefined);
+  const containerStyle = {
+    width: '100%',
+    height: '600px',
+    'margin-left': '30px', // 引用符で囲む
+  };
+
+  const center = {
+    lat: 34.61777632406608,
+    lng: 135.53829496091254,
+  };
+
+  const marking = {
+    lat: 34.61777632406608,
+    lng: 135.53829496091254,
+  };
+
   const infoWindowOptions = {
     pixelOffset: size,
-    
   };
+
   const createOffsetSize = () => {
     return setSize(new window.google.maps.Size(0, -45));
   };
-  
-  return (
-    <div className={styles.map}>
-    <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY!}
-     onLoad={() => createOffsetSize()}>
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={16}
-      >
-     
-        <MarkerF
-          visible={true}
-          position={marking}
-        />
-         <InfoWindowF position={marking} options={infoWindowOptions} >
-          <p className={styles.map_name}>Acht8</p>
-          </InfoWindowF>
-        {/* Child components, such as markers, info windows, etc. */}
-        <></>
-       
-      </GoogleMap>
-    </LoadScript>
-    <Address />
-    </div>
-  )
+
+  const { isLoaded } = useJsApiLoader({
+    id: 'google-map-script',
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY || '',
+  });
+
+  const onLoad = (marker: google.maps.Marker) => {
+    console.log('Marker loaded at', marker.getPosition()?.toString());
+  };
+
+  if (isLoaded) {
+    return (
+      <div className={styles.map}>
+        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={16}>
+          <Marker onLoad={onLoad} visible={true} position={marking} />
+          <InfoWindow position={marking} options={infoWindowOptions}>
+            <p className={styles.map_name}>Acht8</p>
+          </InfoWindow>
+        </GoogleMap>
+        <Google_address />
+      </div>
+    );
+  } 
 }
 
-export default React.memo(MyComponent)
+export default memo(MyComponent);

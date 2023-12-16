@@ -1,8 +1,13 @@
 .wrapper {
     padding: var(--space-xl) 0;
     background-color: var(--gray-10);
+    margin-top: 40px;
 }
 .flexContainer{
     composes: sideBySideCenter from "../../styles/utils.module.css";
     gap: 2em;
+}
+.copy{
+    --tw-text-opacity: 1;
+    color: rgb(107 114 128 / var(--tw-text-opacity));
 }

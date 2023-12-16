@@ -1,130 +1,132 @@
-"use client"
-
-import { Tab,Tabs, TabList, TabPanel} from 'react-tabs'
-import 'react-tabs/style/react-tabs.css';
-import { db } from '@/firebase';
-import { useEffect, useState } from 'react';
-import dayjs from 'dayjs';
-import styles from "./news.module.css"
-import { Button } from '@mui/material';
-
+'use client'
+import { Button } from '@mui/material'
+import dayjs from 'dayjs'
+import {
+  collection,
+  query,
+  orderBy,
+  limit,
+  onSnapshot,
+  getFirestore,
+} from 'firebase/firestore'
+import { useEffect, useState } from 'react'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
+import 'react-tabs/style/react-tabs.css'
+import styles from './news.module.css'
+import firebase_app from '@/firebase/config'
+import "./news.css"
 interface Message {
-    id: string;
-    text: string;
-    createdAt: string;
-  }
-
+  id: string
+  text: string
+  createdAt: string
+}
 const News = () => {
-  const [messages, setMessages] = useState<Message[]>([]);
-  const [loadIndex, setLoadIndex] = useState(1);
-  const [isEmpty, setIsEmpty] = useState(false);
-  const [currentPost, setCurrentPost] = useState([]);
-
+  const [messages, setMessages] = useState<Message[]>([])
+  const [loadIndex, setLoadIndex] = useState(1)
+  const [isEmpty, setIsEmpty] = useState(false)
+  const [activeTab, setActiveTab] = useState(0);
+  // const [currentPost, setCurrentPost] = useState([])
+  const db = getFirestore(firebase_app)
   const displayMore = () => {
     if (loadIndex > messages.length) {
-      setIsEmpty(true);
+      setIsEmpty(true)
     } else {
-      setLoadIndex(loadIndex + 4);
+      setLoadIndex(loadIndex + 4)
     }
-  };
+  }
 
+  useEffect(() => {
+    const messagesCollection = collection(db, 'messages')
+    const q = query(messagesCollection, orderBy('createdAt','desc'), limit(50))
 
-
-  useEffect(()=>{
-    db.collection("messages").orderBy("createdAt","desc").limit(50)
-    .onSnapshot((snapshot)=>{
-      const data = snapshot.docs.map((doc,index)=>({
-        
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      const data = snapshot.docs.map((doc) => ({
         id: doc.id,
         text: doc.data().text,
         createdAt: dayjs(doc.data().createdAt.toDate()).format('YYYY/MM/DD'),
-        
-        }))
-      
-      setMessages(data);
-      
+      }))
+
+      setMessages(data)
     })
-  },[])
-  
-  const message = messages.filter((fil)=> fil.createdAt === "2023/01/01")
-console.log(message)
 
+    // コンポーネントがアンマウントされたときに監視を解除
+    return () => unsubscribe()
+  }, [])
+  const message = messages.filter((fil) => fil.createdAt === '2023/01/01')
+  console.log(message)
 
-   
-  
-    
-           
-    
-  return ( 
+  const handleTabClick = (index: any ) => {
+    setActiveTab(index);
+  };
+
+  return (
     <div className={styles.news_page}>
-       <div className={styles.title}>
+      <div className={styles.title}>
         <h2 className={styles.news_title}>News</h2>
-       </div>
-     <div className={styles.news}>
-      <Tabs>
-            <TabList className={styles.news_TabList} >
-                <Tab className={styles.news_Tab}><p>お知らせ</p></Tab>
-                <Tab className={styles.news_Tab}><p>お知らせ</p></Tab>
-                <Tab className={styles.news_Tab}><p>お知らせ</p></Tab>
-            </TabList>
-            <TabPanel >  
-                {messages.map((post)=>(
-                      <div  key={post.id} className={styles.TabPanel}>
-                        
-                        <p className={styles.news_time}>{post.createdAt}</p>
-                        
-
-                        <a className={styles.news_text1} target="_blank" rel="noopener">{post.text}aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</a>
-                        </div>
-                      
-                  ))}
-            </TabPanel>
-            <TabPanel>
-            <div className='news-tabs'>
-            {messages.map((post)=>(
-                 
-                      <div  key={post.id} className='news-map' >
-                        
-                        <p className='news-flex-date1'>{post.createdAt}</p>
-                        
-
-                        <a className='news-flex-text1'>{post.text}</a>
-                        </div>
-                 
-
-                      
-                  ))}
-                  </div>
-              
-            </TabPanel>
-            <TabPanel>
-              {messages.slice(0,loadIndex).map((post:any)=>(
-                <div  key={post.id} className={styles.TabPanel}>
-                        
+      </div>
+      <div className={styles.news}>
+        <Tabs>
+          <TabList className={styles.news_TabList}>
+          <Tab onClick={() => handleTabClick(0)} 
+          className={activeTab === 0 ? styles.active : styles.news_tab}>
+            Tab 1
+          </Tab>
+          <Tab onClick={() => handleTabClick(1)} 
+          className={activeTab === 1 ? styles.active : styles.news_tab}>
+            Tab 2
+          </Tab>
+          <Tab onClick={() => handleTabClick(2)} 
+          className={activeTab === 2 ? styles.active : styles.news_tab}>
+            Tab 3
+          </Tab>
+          </TabList>
+          <TabPanel>
+            {messages.map((post) => (
+              <div key={post.id} className={styles.TabPanel}>
                 <p className={styles.news_time}>{post.createdAt}</p>
-                
 
-                <a className={styles.news_text1} target="_blank" rel="noopener">{post.text}</a>
-                
-                     </div>
+                <a className={styles.news_text1} target="_blank" rel="noopener">
+                  {post.text}
+                  
+                </a>
+              </div>
+            ))}
+          </TabPanel>
+          <TabPanel>
+            <div className="news-tabs">
+              {messages.map((post) => (
+                <div key={post.id} className="news-map">
+                  <p className="news-flex-date1">{post.createdAt}</p>
+
+                  <a className="news-flex-text1">{post.text}</a>
+                </div>
               ))}
-              <div className={styles.more_button}>
-               <Button
-              disabled={isEmpty ? true : false}
-              onClick={displayMore}
-              variant="contained"
-              className={styles.more_button}
-            >
-              more
-            </Button>
             </div>
-            </TabPanel>
+          </TabPanel>
+          <TabPanel>
+            {messages.slice(0, loadIndex).map((post) => (
+              <div key={post.id} className={styles.TabPanel}>
+                <p className={styles.news_time}>{post.createdAt}</p>
 
-            
+                <a className={styles.news_text1} target="_blank" rel="noopener">
+                  {post.text}
+                </a>
+              </div>
+            ))}
+            <div className={styles.more_button}>
+              <Button
+                disabled={isEmpty ? true : false}
+                onClick={displayMore}
+                variant="contained"
+                className={styles.more_button}
+              >
+                more
+              </Button>
+            </div>
+          </TabPanel>
         </Tabs>
-        
+      </div>
     </div>
-   </div>
   )
 }
 

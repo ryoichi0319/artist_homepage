@@ -1,0 +1,27 @@
+/* タブのボーダーを削除するスタイル */
+/* .react-tabs {
+    border: none;
+  }
+   */
+  /* アクティブなタブのボーダーを削除するスタイル */
+  .react-tabs .react-tabs__tab--selected {
+    border: none;
+    color: #007acc; 
+    background-color: rgb(255, 251, 247);
+
+  }
+  
+  /* タブの下部ボーダーを削除するスタイル */
+  /* .react-tabs .react-tabs__tab-list {
+    border-bottom: none;
+  } */
+
+  /* .react-tabs__tab--selected{
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+   */
+
+   .react-tabs__tab--selected{
+    outline: none;
+   }

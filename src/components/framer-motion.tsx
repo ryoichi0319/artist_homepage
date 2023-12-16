@@ -1,6 +1,6 @@
-import { AnimatePresence,motion } from "framer-motion"
+/* eslint-disable no-irregular-whitespace */
+import { AnimatePresence, motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
-
 
 export default function MotionWrapper({
   children,
@@ -12,8 +12,10 @@ export default function MotionWrapper({
   return (
     // アンマウント時の動きをつけるために必要な記述
     <AnimatePresence mode="wait">
-{/* 
+      {/* 
+// eslint-disable-next-line no-irregular-whitespace, no-irregular-whitespace
 　　　　　　　　　　　　//　動きをつけるために必要な記述
+// eslint-disable-next-line no-irregular-whitespace
 　　　　　　　　　　　　//　具体的な動きを記述
 　　　　　　　　　　　　//　今回はopacityを使用して　ふわっ　を実現 */}
       <motion.div
@@ -21,8 +23,6 @@ export default function MotionWrapper({
         initial={{ opacity: 0 }} //　初期状態
         animate={{ opacity: 1 }} // マウント時
         exit={{ opacity: 0 }} // アンマウント時
-        
-        
       >
         {children}
       </motion.div>

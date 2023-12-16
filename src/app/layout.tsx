@@ -1,10 +1,11 @@
-import "../styles/globals.css"
+import '../styles/globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import Header from '@/components/header/header'
 import Footer from '@/components/footer/footer'
+import Header from '@/components/header/header'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+// eslint-disable-next-line import/order
 import { config } from '@fortawesome/fontawesome-svg-core'
+import {AuthContextProvider} from '@/context/Authcontext'
 
 config.autoAddCss = false
 
@@ -20,16 +21,21 @@ export default function RootLayout({
 }) {
   return (
     <>
-    <html lang="en">
-      <body>
-        <Header />
-       
-        {children}
-        
-        
-        <Footer />
-        </body>
-    </html>
+      
+        <html lang="en">
+          <body>
+            <AuthContextProvider>
+              <div>
+              <Header />
+              
+              {children}
+              
+              <Footer />
+              </div>
+            </AuthContextProvider>
+
+          </body>
+        </html>
     </>
   )
 }

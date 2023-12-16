@@ -1,23 +1,22 @@
 import React from 'react'
-import Nav from './nav';
-import Logo from './logo';
-import styles from "./header.module.css"
-import { Container } from '../container';
+import { Container } from '../container'
+import styles from './header.module.css'
+import Logo from './logo'
+import Nav from './nav'
 
 const Header = () => {
   return (
-    <div className='header_parent'>
-    <header className={styles.header}>
-      <Container large>
-      <div className={styles.flexContainer}>
-      
-      <Logo />
-      <Nav />
-      </div>
-      </Container>
+    <div className="header_parent">
+      <header className={styles.header}>
+        <Container large>
+          <div className={styles.flexContainer}>
+            <Logo />
+            <Nav />
+          </div>
+        </Container>
       </header>
-      </div>
+    </div>
   )
 }
 
-export default Header;
+export default Header

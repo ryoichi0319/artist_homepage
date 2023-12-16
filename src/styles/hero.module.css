@@ -10,6 +10,22 @@
     color:rgb(232, 214, 214);
     z-index:500;
 }
+@media screen and (max-width: 768px) {
+    /* 768px以下の画面サイズに対するスタイル */
+    .message {
+        font-size: 30px;
+        top: 40%;
+        right: 10%;
+    }
+}
+@media screen and (max-width: 900px) {
+    /* 768px以下の画面サイズに対するスタイル */
+    .message {
+        font-size: 25px;
+        top: 40%;
+        right: 15%;
+    }
+}
     
 .title{
     font-size: 3em;

@@ -1,22 +1,22 @@
-"use client"
-import Image from 'next/image'
-import styles from './page.module.css'
-import Slider from '@/components/slider'
+'use client'
 import Hero from '../components/hero'
-import About from '@/components/about/about'
+import MyComponent from './access/page'
 import News from './news/page'
-import MyComponent from '../app/access/page'
+import About from '@/components/about/about'
+import Slider from '@/components/slider'
+import Schedule from './schedule/page'
+
 const items = [
-  { id: 1, content: 'Slide 1', imageUrl: 'bag2.jpg'  },
-  { id: 2, content: 'Slide 2', imageUrl: 'bag1.jpg' },
-  { id: 3, content: 'Slide 3', imageUrl: 'bag3.jpg' },
+  { id: 1, content: 'Slide 1', imageUrl: '/bag2.jpg' },
+  { id: 2, content: 'Slide 2', imageUrl: '/bag1.jpg' },
+  { id: 3, content: 'Slide 3', imageUrl: '/bag3.jpg' },
 ]
 
 export default function Home() {
   return (
     <div>
-      <Hero title="Product"/>
-      <Slider  items={items}/>
+      <Hero title="Product" />
+      <Slider items={items} />
       <About />
       <News />
       <MyComponent />

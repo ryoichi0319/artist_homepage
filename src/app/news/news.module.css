@@ -21,7 +21,16 @@
     border-bottom: 2px solid var(--gray-25);
     flex-wrap: wrap;  /* タブが幅狭い場合の折り返し */
 }
-.news_Tab{
+.news_tab{
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    
+}
+.active{
+    font-size: 1.2em;
+    margin-bottom: 10px;
+
+    
 }
 .TabPanel{
     display: flex;
