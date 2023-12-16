@@ -1,9 +1,9 @@
 'use client'
 import Hero from '../components/hero'
-import MyComponent from './access/page'
 import News from './news/page'
 import About from '@/components/about/about'
 import Slider from '@/components/slider'
+import Access from './access/page'
 
 const items = [
   { id: 1, content: 'Slide 1', imageUrl: '/bag2.jpg' },
@@ -18,7 +18,7 @@ export default function Home() {
       <Slider items={items} />
       <About />
       <News />
-      <MyComponent />
+      <Access />
     </div>
   )
 }

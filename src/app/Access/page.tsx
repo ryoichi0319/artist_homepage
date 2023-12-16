@@ -8,8 +8,9 @@ import {
 } from '@react-google-maps/api';
 import Google_address from './google_address';
 import styles from "../../styles/address.module.css"
+ 
 
-function MyComponent() {
+function Access() {
   const [size, setSize] = useState<undefined | google.maps.Size>(undefined);
   const containerStyle = {
     width: '100%',
@@ -59,4 +60,4 @@ function MyComponent() {
   } 
 }
 
-export default memo(MyComponent);
+export default Access;
