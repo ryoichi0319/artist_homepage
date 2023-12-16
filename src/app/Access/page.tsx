@@ -6,11 +6,10 @@ import {
   InfoWindow,
   useJsApiLoader,
 } from '@react-google-maps/api';
-import Google_address from './google_address';
 import styles from "../../styles/address.module.css"
  
 
-function Access() {
+const Access =() => {
   const [size, setSize] = useState<undefined | google.maps.Size>(undefined);
   const containerStyle = {
     width: '100%',
@@ -54,7 +53,13 @@ function Access() {
             <p className={styles.map_name}>Acht8</p>
           </InfoWindow>
         </GoogleMap>
-        <Google_address />
+        <div className={styles.address}>
+        <h3 className="address-name">Acht8</h3>
+        <p className="access-address">
+          546-0012 <br /> 大阪市東住吉区中野3-12-3 ドミール春光1F
+        </p>
+        <p>TEL: 092-626-1777</p> <p>FAX: 092-626-1781</p>
+      </div>
       </div>
     );
   } 
