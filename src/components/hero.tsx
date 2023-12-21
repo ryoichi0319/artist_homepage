@@ -22,7 +22,7 @@ export default function Hero({ title }: HeroProps) {
       />
       <MotionWrapper shouldAnimate={false}  >
 
-      <p className={styles.message}>“ひと手間”に心血を注ぎます。</p>
+      <p className={styles.message}>“ひと手間”に心血を注ぐ</p>
       </MotionWrapper>
       <Container large={false}>
         <div className={styles.flexContainer}>
