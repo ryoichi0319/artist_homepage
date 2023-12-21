@@ -43,10 +43,12 @@ const Slider: React.FC<SliderProps> = ({ items }) => {
   }
   return (
     <div className={styles.swiper_page}>
+      
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, Autoplay, EffectCube]}
         pagination={{ clickable: true }}
         breakpoints={breakpoints}
+        autoplay
         navigation
         scrollbar={{ draggable: true }}
         cubeEffect={{
@@ -76,6 +78,7 @@ const Slider: React.FC<SliderProps> = ({ items }) => {
           </SwiperSlide>
         ))}
       </Swiper>
+
     </div>
   )
 }

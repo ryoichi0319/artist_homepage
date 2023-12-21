@@ -9,6 +9,7 @@ function Page() {
     const [password, setPassword] = useState('')
     const router = useRouter()
     const { user } = useAuthContext()
+    
     const handleForm = async (event: React.FormEvent) => {
         event.preventDefault()
 
@@ -28,7 +29,7 @@ function Page() {
             <form onSubmit={handleForm} className="form">
                 <label htmlFor="email">
                     <p>Email</p>
-                    {user && user.email && <p>{user.email}</p>} {/* ユーザーが存在し、メールアドレスがある場合に表示 */}
+                {user && user.email && <p>{user.email}</p>} {/* ユーザーが存在し、メールアドレスがある場合に表示 */}
                     <input onChange={(e) => setEmail(e.target.value)} required type="email" name="email" id="email" placeholder="example@mail.com" />
                 </label>
                 <label htmlFor="password">

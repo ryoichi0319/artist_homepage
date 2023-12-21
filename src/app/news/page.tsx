@@ -52,8 +52,17 @@ const News = () => {
     // コンポーネントがアンマウントされたときに監視を解除
     return () => unsubscribe()
   }, [])
-  const message = messages.filter((fil) => fil.createdAt === '2023/01/01')
-  console.log(message)
+  const currentYear = new Date().getFullYear();
+  const currentMonth = new Date().getMonth();
+  const startOfMonth = new Date(`${currentYear}/${currentMonth}/01`);
+
+  const filteredMessages = messages.filter((fil) => {
+    console.log(fil.createdAt)
+    const messageDate = new Date(fil.createdAt);
+    return messageDate > startOfMonth;
+  });
+  
+  console.log(filteredMessages);
 
   const handleTabClick = (index: any ) => {
     setActiveTab(index);
@@ -69,15 +78,15 @@ const News = () => {
           <TabList className={styles.news_TabList}>
           <Tab onClick={() => handleTabClick(0)} 
           className={activeTab === 0 ? styles.active : styles.news_tab}>
-            Tab 1
+            NEWS
           </Tab>
           <Tab onClick={() => handleTabClick(1)} 
           className={activeTab === 1 ? styles.active : styles.news_tab}>
-            Tab 2
+            this month's NEWS
           </Tab>
           <Tab onClick={() => handleTabClick(2)} 
           className={activeTab === 2 ? styles.active : styles.news_tab}>
-            Tab 3
+            all NEWS
           </Tab>
           </TabList>
           <TabPanel>
@@ -92,17 +101,19 @@ const News = () => {
               </div>
             ))}
           </TabPanel>
+          
           <TabPanel>
             <div className="news-tabs">
-              {messages.map((post) => (
-                <div key={post.id} className="news-map">
-                  <p className="news-flex-date1">{post.createdAt}</p>
+              {filteredMessages.map((post) => (
+                <div key={post.id} className={styles.TabPanel}>
+                  <p className={styles.news_time}>{post.createdAt}</p>
 
-                  <a className="news-flex-text1">{post.text}</a>
+                  <a className={styles.news_text1}>{post.text}</a>
                 </div>
               ))}
             </div>
           </TabPanel>
+
           <TabPanel>
             {messages.slice(0, loadIndex).map((post) => (
               <div key={post.id} className={styles.TabPanel}>

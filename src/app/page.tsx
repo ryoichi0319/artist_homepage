@@ -17,6 +17,7 @@ export default function Home() {
       <Slider items={items} />
       <About />
       <News />
+
     </div>
   )
 }

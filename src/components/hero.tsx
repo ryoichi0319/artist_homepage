@@ -16,18 +16,20 @@ export default function Hero({ title }: HeroProps) {
         sizes="100vw"
         style={{
           width: '100%',
-          height: '660px',
+          height: '100vh',
         }}
         priority
       />
+      <MotionWrapper shouldAnimate={false}  >
+
       <p className={styles.message}>“ひと手間”に心血を注ぎます。</p>
+      </MotionWrapper>
       <Container large={false}>
         <div className={styles.flexContainer}>
-          <MotionWrapper>
             <h2 className={styles.product}>{title}</h2>
-          </MotionWrapper>
         </div>
       </Container>
+      
     </div>
   )
 }

@@ -63,9 +63,15 @@ const NewsEdit = () => {
 // コンポーネントがアンマウントされたときに監視を解除
     return () => unsubscribe()
   }, [])
+  const currentYear = new Date().getFullYear();
+  const currentMonth = new Date().getMonth();
+  const startOfMonth = new Date(`${currentYear}/${currentMonth}/01`);
 
-  const message = messages.filter((fil) => fil.createdAt === '2023/01/01')
-  console.log(message)
+  const filteredMessages = messages.filter((fil) => {
+    console.log(fil.createdAt)
+    const messageDate = new Date(fil.createdAt);
+    return messageDate > startOfMonth;
+  });
 
 
       //新しいメッセージを作成
@@ -168,7 +174,7 @@ const NewsEdit = () => {
           </TabPanel>
           <TabPanel>
             <div className="news-tabs">
-              {messages.map((post) => (
+              {filteredMessages.map((post) => (
                 <div key={post.id} className="news-map">
                   <p className="news-flex-date1">{post.createdAt}</p>
 

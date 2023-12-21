@@ -1,10 +1,13 @@
-.swiper_page{
-    margin:20px auto 0;
-    padding-top: 1px;
-    width: 800px;
-    border-radius: 5px;
-    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
-  }  
+.swiper_page {
+  margin: 20px auto 0;
+  padding-top: 1px;
+  width: 850px;
+  border-radius: 10px; /* より大きな値で丸みを増やす */
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.5); /* 影をより強調 */
+  border: 1px solid #ddd; /* 境界線を追加して立体感を強調 */
+  background: linear-gradient(45deg, #f7f7f7, #e0e0e0); /* グラデーションを追加して奥行き感を出す */
+  transform: perspective(100px) rotateX(1.5deg); /* 透視変換を追加して奥行き感を出す */
+}
   @media(max-width:768px){
     .swiper_page{
         width: 98%;

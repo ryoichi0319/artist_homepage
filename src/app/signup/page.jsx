@@ -12,43 +12,49 @@ function Page() {
         event.preventDefault()
 
         const { result, error } = await signUp(email, password);
-
+     
         if (error) {
             return console.log(error)
         }
-
+        if (result.user.uid !== process.env.NEXT_PUBLIC_UID) {
+            console.log("Invalid email");
+            // 条件に一致しない場合、中断して戻る
+            return;
+        }
+        
+      console.log(result.user.email)
         // else successful
         return router.push("/admin")
     }
     return (<div className="wrapper" style={{margin: "100px", textAlign: "center"}}>
         <div className="form-wrapper" >
             <h1 className="mt-60 mb-30">Sign up</h1>
-            <form onSubmit={handleForm} className="form">
+        <form onSubmit={handleForm} className="form">
             <label htmlFor="email">
-    <p>メールアドレス</p>
-    <input
-        onChange={(e) => setEmail(e.target.value)}
-        required
-        type="email"
-        name="email"
-        id="email"
-        placeholder="example@mail.com"
-    />
-</label>
-<label htmlFor="password">
-    <p>パスワード</p>
-    <input
-        onChange={(e) => setPassword(e.target.value)}
-        required
-        type="password"
-        name="password"
-        id="password"
-        placeholder="パスワード"
-    />
-</label>
+            <p>メールアドレス</p>
+            <input
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                type="email"
+                name="email"
+                id="email"
+                placeholder="example@mail.com"
+            />
+            </label>
+            <label htmlFor="password">
+                <p>パスワード</p>
+                <input
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="パスワード"
+                />
+            </label>
 
                 <button type="submit">Sign up</button>
-            </form>
+        </form>
         </div>
     </div>);
 }
