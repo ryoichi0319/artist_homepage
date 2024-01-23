@@ -39,8 +39,8 @@ export default function Nav() {
           </Link>
         </li>
         <li>
-          <Link href="/discography" onClick={closeNav}>
-            Discography
+          <Link href="/schedule" onClick={closeNav}>
+            Schedule
           </Link>
         </li>
         <li>

@@ -4,9 +4,14 @@ import misin from "../../../public/misin.jpg"
 import styles from "@/styles/about.module.css"
 import MotionWrapper from '../framer-motion';
 export default function About() {
+
+
+
+  
   return (
     <>
     <div className={styles.about_all}>
+   
       <div className={styles.side_right}>
         
         <div className={styles.about_title}>
@@ -16,16 +21,18 @@ export default function About() {
             </MotionWrapper>
 
             </h3>
+            <MotionWrapper shouldAnimate={true}>
+
           <p className={styles.about_p}>
-          <MotionWrapper shouldAnimate={true}>
 
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
             eligendi reiciendis quo voluptas minima eos sit soluta voluptates,
             cum ipsum ipsa rerum quam vitae id quis, architecto itaque magnam?
             Debitis.
-            </MotionWrapper>
 
           </p>
+          </MotionWrapper>
+
         </div>
         <div className={styles.about_images}>
           <Image
@@ -60,15 +67,18 @@ export default function About() {
             title
             </MotionWrapper>
           </h3>
-          <p className={styles.about_p}>
           <MotionWrapper shouldAnimate={true}>
+
+          <p className={styles.about_p}>
 
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
             eligendi reiciendi s quo voluptas minima eos sit soluta voluptates,
             cum ipsum ipsa rerum quam vitae id quis, architecto itaque magnam?
             Debitis.
-            </MotionWrapper>
           </p>
+          </MotionWrapper>
+        
+
         </div>
       </div>
       </div>

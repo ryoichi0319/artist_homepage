@@ -13,7 +13,6 @@ export default function Hero({ title }: HeroProps) {
       <Image
         src={sample10}
         alt=""
-        sizes="100vw"
         style={{
           width: '100%',
           height: '100vh',

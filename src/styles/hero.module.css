@@ -13,10 +13,11 @@
 }
 @media screen and (max-width: 768px) {
     /* 768px以下の画面サイズに対するスタイル */
-    .message {
-        font-size: 30px;
-        top: 40%;
-        right: 10%;
+ 
+    .image{
+        width: 1000px;
+        height: auto;
+        margin: 0 auto;
     }
 }
 @media screen and (max-width: 900px) {
@@ -24,7 +25,7 @@
     .message {
         font-size: 25px;
         top: 40%;
-        right: 15%;
+        right: 55%;
     }
 }
     

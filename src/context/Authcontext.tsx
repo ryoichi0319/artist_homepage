@@ -17,11 +17,7 @@ interface AuthContextProviderProps {
 
 const auth = getAuth(firebase_app);
 
-export const AuthContext = createContext<{
-    user: User | null;
-  }>({
-    user: null,
-  });
+export const AuthContext = createContext<{ user: User | null;}>({ user: null,});
 export const useAuthContext = () => useContext(AuthContext);
 
 export const AuthContextProvider :React.FC<AuthContextProviderProps> = ({children }) => {

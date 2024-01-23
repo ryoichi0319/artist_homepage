@@ -70,7 +70,7 @@ const Slider: React.FC<SliderProps> = ({ items }) => {
                 alt={item.content}
                 sizes="100vw"
                 className={styles.imageSlide}
-                width={320} // 画像の幅を適切なサイズに調整
+                width={400} // 画像の幅を適切なサイズに調整
                 height={250} // 画像の高さを適切なサイズに調整
                 priority
               />
