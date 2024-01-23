@@ -5,6 +5,7 @@ import {
   InfoWindow,
   useJsApiLoader,
 } from '@react-google-maps/api';
+import { useState } from 'react';
 import styles from "../../styles/address.module.css"
  
 
@@ -29,11 +30,15 @@ const Access = () => {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY || '',
+    
   });
+
+
 
   const onLoad = () => {
     console.log('Marker loaded at', marking.lat, marking.lng);
   };
+
   if (!isLoaded) {
     // Handle the case where Google Maps API is not loaded
     return <div>Error loading Google Maps API</div>;
@@ -61,3 +66,4 @@ const Access = () => {
 export default Access;
 
 
+ 
