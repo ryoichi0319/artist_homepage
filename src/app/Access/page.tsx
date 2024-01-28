@@ -49,15 +49,15 @@ const Access = () => {
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={16}>
         <Marker onLoad={onLoad} visible={true} position={marking} />
         <InfoWindow position={marking} >
-          <p className={styles.map_name}>Acht8</p>
+          <p className={styles.map_name}>****</p>
         </InfoWindow>
       </GoogleMap>
       <div className={styles.address}>
-        <h3 className="address-name">Acht8</h3>
+        <h3 className="address-name">****</h3>
         <p className="access-address">
-          546-0012 <br /> 大阪市東住吉区中野3-12-3 ドミール春光1F
+          ***-** <br />*******************
         </p>
-        <p>TEL: 092-626-1777</p> <p>FAX: 092-626-1781</p>
+        <p>TEL: *********</p> <p>FAX: *********</p>
       </div>
     </div>
   );
